@@ -1,6 +1,6 @@
 {
   "_comment": "Baseline figures behind index.html. The hourly refresh re-queries HubSpot, diffs against this file, patches index.html where a figure moved, and commits both. Do not hand-edit without updating index.html to match.",
-  "as_at": "2026-10-13T17:40:00+05:30",
+  "as_at": "2026-10-13T12:10:00Z",
   "portal": "25735731",
   "board": {
     "partner_revenue_ytd": 87000,
@@ -15,19 +15,88 @@
     "signed_partners": 6
   },
   "lifecycle": {
-    "Identification": 25, "Evaluation": 14, "Negotiation": 1,
-    "Contract Signing": 1, "Enablement": 3, "Selling": 2,
-    "total_in_lifecycle": 46, "disqualified": 13
+    "Identification": 25,
+    "Evaluation": 14,
+    "Negotiation": 1,
+    "Contract Signing": 1,
+    "Enablement": 3,
+    "Selling": 2,
+    "total_in_lifecycle": 46,
+    "disqualified": 13
   },
   "partners": {
-    "Harri":           { "company_id": "443191661778", "stage": "Selling",          "deals": 1, "open": 0,     "ytd": 87000, "won_12m": 1, "lost_12m": 0 },
-    "Beamery":         { "company_id": "443192380613", "stage": "Selling",          "deals": 6, "open": 69100, "ytd": 0,     "won_12m": 0, "lost_12m": 1 },
-    "Arctic Shores":   { "company_id": "443412715759", "stage": "Negotiation",      "deals": 4, "open": 8000,  "ytd": 0,     "won_12m": 0, "lost_12m": 0 },
-    "Tribepad":        { "company_id": "443128055022", "stage": "Identification",   "deals": 2, "open": 0,     "ytd": 0,     "won_12m": 0, "lost_12m": 1 },
-    "ModusForce":      { "company_id": "444381813973", "stage": "Contract Signing", "deals": 1, "open": 0,     "ytd": 0,     "won_12m": 0, "lost_12m": 0 },
-    "Eploy":           { "company_id": "443475284168", "stage": "Enablement",       "deals": 0, "open": 0,     "ytd": 0,     "won_12m": 0, "lost_12m": 0 },
-    "Pinpoint":        { "company_id": "428022804693", "stage": "Enablement",       "deals": 0, "open": 0,     "ytd": 0,     "won_12m": 0, "lost_12m": 0 },
-    "HospitalityJobs": { "company_id": "443128057049", "stage": "Evaluation",       "deals": 0, "open": 0,     "ytd": 0,     "won_12m": 0, "lost_12m": 0 }
+    "Harri": {
+      "company_id": "443191661778",
+      "stage": "Selling",
+      "deals": 1,
+      "open": 0,
+      "ytd": 87000,
+      "won_12m": 1,
+      "lost_12m": 0
+    },
+    "Beamery": {
+      "company_id": "443192380613",
+      "stage": "Selling",
+      "deals": 6,
+      "open": 69100,
+      "ytd": 0,
+      "won_12m": 0,
+      "lost_12m": 1
+    },
+    "Arctic Shores": {
+      "company_id": "443412715759",
+      "stage": "Negotiation",
+      "deals": 4,
+      "open": 8000,
+      "ytd": 0,
+      "won_12m": 0,
+      "lost_12m": 0
+    },
+    "Tribepad": {
+      "company_id": "443128055022",
+      "stage": "Identification",
+      "deals": 2,
+      "open": 0,
+      "ytd": 0,
+      "won_12m": 0,
+      "lost_12m": 1
+    },
+    "ModusForce": {
+      "company_id": "444381813973",
+      "stage": "Contract Signing",
+      "deals": 1,
+      "open": 0,
+      "ytd": 0,
+      "won_12m": 0,
+      "lost_12m": 0
+    },
+    "Eploy": {
+      "company_id": "443475284168",
+      "stage": "Enablement",
+      "deals": 0,
+      "open": 0,
+      "ytd": 0,
+      "won_12m": 0,
+      "lost_12m": 0
+    },
+    "Pinpoint": {
+      "company_id": "428022804693",
+      "stage": "Enablement",
+      "deals": 0,
+      "open": 0,
+      "ytd": 0,
+      "won_12m": 0,
+      "lost_12m": 0
+    },
+    "HospitalityJobs": {
+      "company_id": "443128057049",
+      "stage": "Evaluation",
+      "deals": 0,
+      "open": 0,
+      "ytd": 0,
+      "won_12m": 0,
+      "lost_12m": 0
+    }
   },
   "records_to_fix": {
     "partner_deal_no_partner_company": 12,
@@ -41,11 +110,40 @@
     "open_deal_no_amount_or_close_date": 7
   },
   "deals_by_year": {
-    "2022": { "count": 1,  "value": 108000 },
-    "2023": { "count": 5,  "value": 80000 },
-    "2024": { "count": 16, "value": 421199 },
-    "2025": { "count": 21, "value": 422957 },
-    "2026": { "count": 15, "value": 204100 }
+    "2022": {
+      "count": 1,
+      "value": 108000
+    },
+    "2023": {
+      "count": 5,
+      "value": 80000
+    },
+    "2024": {
+      "count": 16,
+      "value": 421199
+    },
+    "2025": {
+      "count": 21,
+      "value": 422957
+    },
+    "2026": {
+      "count": 15,
+      "value": 204100
+    }
   },
-  "deals_by_month_2026": { "Jan":1,"Feb":0,"Mar":2,"Apr":1,"May":0,"Jun":0,"Jul":0,"Aug":5,"Sep":4,"Oct":2,"Nov":0,"Dec":0 }
+  "deals_by_month_2026": {
+    "Jan": 1,
+    "Feb": 0,
+    "Mar": 2,
+    "Apr": 1,
+    "May": 0,
+    "Jun": 0,
+    "Jul": 0,
+    "Aug": 5,
+    "Sep": 4,
+    "Oct": 2,
+    "Nov": 0,
+    "Dec": 0
+  },
+  "_timestamp_format": "Header stamp shows GMT then London local time. Never IST."
 }

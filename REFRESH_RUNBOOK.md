@@ -85,7 +85,10 @@ All via `query_crm_data` (SQL dialect). `FY` = calendar 2026; roll the dates eac
    before writing.
 4. Table rows carry `data-v="<raw number>"` for sorting. Patch the attribute and the
    visible text together or sorting breaks.
-5. Update the header stamp: `<span class="asat" id="asat">live · refreshed <D Month YYYY>, <HH:MM> IST</span>`.
+5. Update the header stamp to **GMT and London local time — never IST**:
+   `<span class="asat" id="asat">live &middot; refreshed <D Month YYYY>, <HH:MM> GMT &middot; <HH:MM> London</span>`
+   London is GMT in winter and BST (GMT+1) from late March to late October, so the two
+   differ for most of the year. Print both; do not collapse them when they match.
 6. Write the new `data.json`.
 
 **Verify before committing.** Open the patched file headlessly and confirm: no JS errors,
@@ -109,12 +112,46 @@ Push to `main`. Vercel redeploys automatically. **Never force-push**; never rewr
 
 ---
 
+## 4a. Slack — every run, without exception
+
+After the commit decision is made, DM the result to Arushi on Slack (`channel_id` is her
+user id `U0BJTG9SECB`). **Send one every hour whether or not anything moved** — she asked
+for the heartbeat, so silence is not an acceptable outcome.
+
+Three shapes:
+
+**Nothing moved**
+> *Partner dashboard · 14 Oct, 09:00 GMT · 10:00 London*
+> No change. Partner revenue £87,000, open pipeline £77,100 across 11 deals.
+
+**Something moved and was patched**
+> *Partner dashboard · updated*
+> Open pipeline £77,100 → £91,400, 11 → 12 deals. New: Acme Corp via Beamery, £14,300 at Discovery.
+> Live: https://inploi-partner-dashboard.vercel.app · commit `abc1234`
+
+**Stopped — needs a person** (any §5 case)
+> *Partner dashboard · not updated, needs you*
+> <what was found, and why it was not patched>
+> Nothing was committed; the dashboard still shows <date> figures.
+
+Keep it to a few lines. Name figures, not process. Always include the live URL when
+something changed. If the Slack send fails, say so in the run's final line — never let a
+failed notification pass as a quiet run.
+
+---
+
 ## 5. When to stop and report instead of patching
 
 Stop, commit nothing, and report:
 
 - A new partner-sourced **new-business win** — the denominator needs the bookings sheet.
 - A **new partner company** appearing in the overview set, or an existing one dropping out.
+- A deal named `Test`, `TEST`, `Demo`, `Dummy` or similar, or one attached to a company that
+  is not `company_type = Partner`, carrying Deal Source = Partner. These are test records.
+  **Never put one on the board.** Report it for deletion or re-sourcing.
+- A deal that was partner-sourced in the last snapshot and now has a blank or changed Deal
+  Source. That silently removes it from every partner report and can drop a partner out of
+  the productive count.
 - Any verification check in §3 failing.
 - A figure moving more than 50% in one hour — almost always a data-entry error or a
   migration in progress, not a real change.
