@@ -7,7 +7,7 @@ Static dashboard for the inploi partner programme. No build step, no dependencie
 | File | What it is |
 |---|---|
 | `index.html` | The whole dashboard — Board, Management and Miscellaneous views, self-contained |
-| `vercel.json` | No-cache headers so a refresh shows immediately; `frame-ancestors` so the page can be embedded in HubSpot |
+| `vercel.json` | No-cache headers so a refresh shows immediately |
 
 ## How it stays current
 
@@ -26,6 +26,20 @@ Every definition, filter and field name behind these numbers lives in
 
 ## Embedding in HubSpot
 
-Link to the deployed URL rather than embedding it in an iframe. HubSpot frames
-external content with `sandbox="allow-scripts"` only, which blocks single-click
-navigation out of the page — tested across all four sandbox configurations.
+**Do not add a `frame-ancestors` CSP here.** An earlier version set
+`frame-ancestors 'self' https://*.hubspot.com ...` intending to permit HubSpot
+embedding. It did the opposite: with no CSP a page is framable by default, and
+`frame-ancestors` applies to the *whole* ancestor chain — HubSpot nests the embed
+inside a sandboxed wrapper whose origin is `null`, which matches no host entry. The
+result was "refused to connect" in HubSpot's embed preview.
+
+Even with framing allowed, **link to the URL rather than embedding it**. HubSpot frames
+external content with `sandbox="allow-scripts"` only, so single-click navigation out of
+the page is impossible — tested across all four sandbox configurations.
+
+## Access
+
+This deployment is public: anyone with the URL can read it, including partner revenue,
+deal values and customer names. Vercel deployment protection would close that, but
+protection and HubSpot embedding are mutually exclusive — a protected page cannot be
+framed. Pick one deliberately.

@@ -4,8 +4,7 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
-        { "key": "Content-Security-Policy", "value": "frame-ancestors 'self' https://*.hubspot.com https://*.hubspotpreview.com" }
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     }
   ]
