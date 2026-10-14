@@ -1,7 +1,8 @@
 # Partner Dashboard — Hourly Refresh Runbook
 
 **Owner:** Arushi Mittal · **Portal:** 25735731
-**Repo:** `arushi0101/inploi-partner-dashboard`, branch `main` · **Host:** Vercel (auto-deploys on push)
+**Repo:** `arushi0101/inploi-partner-dashboard`, branch `main`
+**Live:** https://inploi-partner-dashboard.vercel.app — Vercel project `inploi-partner-dashboard` under scope `hey-1646s-projects`, auto-deploys on every push to `main`
 **Cadence:** hourly · **Created:** 14 October 2026
 
 This is the procedure the hourly scheduled task follows. It is deliberately narrow:
