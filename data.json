@@ -1,6 +1,6 @@
 {
   "_comment": "Baseline figures behind index.html. The hourly refresh re-queries HubSpot, diffs against this file, patches index.html where a figure moved, and commits both. Do not hand-edit without updating index.html to match.",
-  "as_at": "2026-10-13T12:10:00Z",
+  "as_at": "2026-10-14T06:40:00Z",
   "portal": "25735731",
   "board": {
     "partner_revenue_ytd": 87000,
@@ -145,5 +145,5 @@
     "Nov": 0,
     "Dec": 0
   },
-  "_timestamp_format": "Header stamp shows GMT then London local time. Never IST."
+  "_timestamp_format": "Header stamp shows GMT only. Never IST, never London. It records the last successful HubSpot read, whether or not any figure changed."
 }

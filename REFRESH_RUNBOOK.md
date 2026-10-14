@@ -3,7 +3,8 @@
 **Owner:** Arushi Mittal · **Portal:** 25735731
 **Repo:** `arushi0101/inploi-partner-dashboard`, branch `main`
 **Live:** https://inploi-partner-dashboard.vercel.app — Vercel project `inploi-partner-dashboard` under scope `hey-1646s-projects`, auto-deploys on every push to `main`
-**Cadence:** hourly · **Created:** 14 October 2026
+**Cadence:** hourly refresh + Slack DM · daily email 21:00 IST · weekly email Friday 17:00 London
+**Created:** 14 October 2026
 
 This is the procedure the hourly scheduled task follows. It is deliberately narrow:
 refresh the figures that move, patch them in place, commit only when something
@@ -85,10 +86,14 @@ All via `query_crm_data` (SQL dialect). `FY` = calendar 2026; roll the dates eac
    before writing.
 4. Table rows carry `data-v="<raw number>"` for sorting. Patch the attribute and the
    visible text together or sorting breaks.
-5. Update the header stamp to **GMT and London local time — never IST**:
-   `<span class="asat" id="asat">live &middot; refreshed <D Month YYYY>, <HH:MM> GMT &middot; <HH:MM> London</span>`
-   London is GMT in winter and BST (GMT+1) from late March to late October, so the two
-   differ for most of the year. Print both; do not collapse them when they match.
+5. Update the header stamp. **GMT only — never IST, never London.**
+   `<span class="asat" id="asat">live &middot; refreshed <D Month YYYY>, <HH:MM> GMT</span>`
+
+   **The stamp records the last successful HubSpot read, not the last change.** Update it on
+   every run that queried HubSpot cleanly, including runs that patch nothing and runs that
+   stop under §5. A reader has to be able to tell "checked today, nothing moved" from
+   "nobody has looked at this since Tuesday", and the stamp is the only thing that says
+   which. On a no-change run, commit the stamp and `data.json`'s `as_at` on their own.
 6. Write the new `data.json`.
 
 **Verify before committing.** Open the patched file headlessly and confirm: no JS errors,
@@ -137,6 +142,46 @@ Three shapes:
 Keep it to a few lines. Name figures, not process. Always include the live URL when
 something changed. If the Slack send fails, say so in the run's final line — never let a
 failed notification pass as a quiet run.
+
+---
+
+## 4b. Daily summary email — 21:00 IST
+
+Sent by its own scheduled task, not the hourly one. Recipient: **arushi.mittal@inploi.com**.
+
+Source of truth for "what changed today" is the repo, not a fresh HubSpot read. Because the
+hourly task commits only on change, the day's commits *are* the day's changes:
+
+```
+git log --since="today 00:00" --format="%h %ad %s" --date=format:"%H:%M" main
+git diff "main@{yesterday}" main -- data.json
+```
+
+Subject: `Partner dashboard — <N> changes today` or `Partner dashboard — no change today`.
+
+Body: what moved, each as one line with the figure before and after. Then anything the
+hourly runs flagged under §5 and did not patch, because those are the items that need her
+rather than the board. Close with the current headline figures and the live URL. If nothing
+moved all day, say so in two lines — do not pad it.
+
+---
+
+## 4c. Weekly report email — Friday 17:00 London
+
+Own scheduled task. Recipient: **arushi.mittal@inploi.com**. This one is written to be
+forwardable to Joseph, so it leads with the programme rather than the plumbing.
+
+1. **Where the numbers stand** — the five board figures, each with the change over the week.
+2. **What moved** — new deals sourced, deals won or lost, partners changing stage, amounts
+   filled in. One line each, partner named.
+3. **What is stuck** — open deals with no amount or close date, signed partners with no
+   sourced deal, NDAs expired. Name the record and how long it has been that way.
+4. **Data quality** — everything the week's runs stopped on and why it still matters.
+5. **Outstanding decisions** — pull from §10 of `Partner_Dashboard_Report_Spec.md`, listing
+   only those still open.
+
+Subject: `Partner dashboard — week to <D Month>`. Keep it to a screen. Figures, not process;
+no description of how the refresh works. Link the dashboard once at the end.
 
 ---
 
