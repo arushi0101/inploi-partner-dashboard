@@ -33,6 +33,11 @@ embedding. It did the opposite: with no CSP a page is framable by default, and
 inside a sandboxed wrapper whose origin is `null`, which matches no host entry. The
 result was "refused to connect" in HubSpot's embed preview.
 
+If a browser saw the blocked version, it may keep refusing after the fix — Chrome caches
+by URL and reuses the stored headers on revalidation. Append a query string
+(`?v=2`) to get a fresh cache entry. That is what unblocked the HubSpot embed on
+14 October; the bare URL works again once the old entry expires.
+
 Even with framing allowed, **link to the URL rather than embedding it**. HubSpot frames
 external content with `sandbox="allow-scripts"` only, so single-click navigation out of
 the page is impossible — tested across all four sandbox configurations.
