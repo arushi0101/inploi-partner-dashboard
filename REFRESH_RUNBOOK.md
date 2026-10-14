@@ -135,9 +135,18 @@ Three shapes:
 > Live: https://inploi-partner-dashboard.vercel.app · commit `abc1234`
 
 **Stopped — needs a person** (any §5 case)
-> *Partner dashboard · not updated, needs you*
+> <@U0BJTG9SECB> *Partner dashboard · not updated, needs a decision*
 > <what was found, and why it was not patched>
+> <the specific question, phrased so it can be answered yes/no or A/B>
 > Nothing was committed; the dashboard still shows <date> figures.
+
+**Always open a "needs a decision" message with the literal mention `<@U0BJTG9SECB>`**
+so it notifies rather than sitting unread. Tag on these and only these — a mention on
+every quiet hourly heartbeat trains her to ignore the tag, which defeats it.
+
+**Ask rather than decide.** When the data is ambiguous and a reasonable person could
+patch it either way, do not pick. State both readings, say which you would choose and
+why, and wait. A wrong figure on Joseph's board costs more than an hour of staleness.
 
 Keep it to a few lines. Name figures, not process. Always include the live URL when
 something changed. If the Slack send fails, say so in the run's final line — never let a
@@ -197,6 +206,14 @@ Stop, commit nothing, and report:
 - A deal that was partner-sourced in the last snapshot and now has a blank or changed Deal
   Source. That silently removes it from every partner report and can drop a partner out of
   the productive count.
+- **Any change to the SET of deals or partners, not just their values** — a deal entering or
+  leaving the partner-sourced set, a partner gaining its first deal or losing its last. The
+  patching rules in §3 cover totals and counts, not the row-level tables (open deals, the KPI
+  dropdown lists, the records-to-fix detail). Patching a total without its rows leaves the
+  board contradicting itself: "12 deals · £91,400" above a table listing 11. So when the set
+  changes, stop, tag her, and say which rows need adding or removing.
+- Anything you are not sure about. The bar is not "can I justify a patch" but "would Arushi
+  patch it the same way without being asked". If those differ, ask.
 - Any verification check in §3 failing.
 - A figure moving more than 50% in one hour — almost always a data-entry error or a
   migration in progress, not a real change.
