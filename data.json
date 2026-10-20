@@ -1,27 +1,27 @@
 {
   "_comment": "Baseline figures behind index.html. The hourly refresh re-queries HubSpot, diffs against this file, patches index.html where a figure moved, and commits both. Do not hand-edit without updating index.html to match.",
-  "as_at": "2026-10-20T10:31:00Z",
+  "as_at": "2026-10-20T11:27:00Z",
   "portal": "25735731",
   "board": {
     "partner_revenue_ytd": 87000,
     "partner_revenue_deal_count": 1,
     "share_of_new_customer_revenue_pct": 31.9,
     "new_business_denominator": 273030,
-    "pipeline_created_fy26": 227400,
+    "pipeline_created_fy26": 247400,
     "pipeline_created_deal_count": 15,
-    "open_pipeline": 100400,
-    "open_deal_count": 11,
+    "open_pipeline": 97100,
+    "open_deal_count": 9,
     "producing_partners": 5,
     "signed_partners": 7
   },
   "lifecycle": {
-    "Identification": 25,
-    "Evaluation": 13,
-    "Negotiation": 0,
-    "Contract Signing": 2,
-    "Enablement": 3,
+    "Identification": 24,
+    "Evaluation": 11,
+    "Negotiation": 1,
+    "Contract Signing": 1,
+    "Enablement": 4,
     "Selling": 2,
-    "total_in_lifecycle": 45,
+    "total_in_lifecycle": 43,
     "disqualified": 16
   },
   "partners": {
@@ -38,16 +38,16 @@
       "company_id": "443192380613",
       "stage": "Selling",
       "deals": 6,
-      "open": 92400,
+      "open": 69100,
       "ytd": 0,
       "won_12m": 0,
-      "lost_12m": 1
+      "lost_12m": 3
     },
     "Arctic Shores": {
       "company_id": "443412715759",
-      "stage": "Contract Signing",
+      "stage": "Enablement",
       "deals": 4,
-      "open": 8000,
+      "open": 28000,
       "ytd": 0,
       "won_12m": 0,
       "lost_12m": 0,
@@ -100,7 +100,7 @@
     }
   },
   "records_to_fix": {
-    "partner_deal_no_partner_company": 12,
+    "partner_deal_no_partner_company": 13,
     "new_logo_missing_source": 5,
     "partner_win_no_partner_company": 2,
     "nda_expired_or_missing": 2,
@@ -108,7 +108,7 @@
     "agreement_stage_below_enablement": 2,
     "stage_above_no_agreement": 2,
     "no_partner_manager": 2,
-    "open_deal_no_amount_or_close_date": 7
+    "open_deal_no_amount_or_close_date": 4
   },
   "deals_by_year": {
     "2022": {
@@ -129,7 +129,7 @@
     },
     "2026": {
       "count": 15,
-      "value": 227400
+      "value": 247400
     }
   },
   "deals_by_month_2026": {
