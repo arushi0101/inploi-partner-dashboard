@@ -1,6 +1,6 @@
 {
   "_comment": "Baseline figures behind index.html. The hourly refresh re-queries HubSpot, diffs against this file, patches index.html where a figure moved, and commits both. Do not hand-edit without updating index.html to match.",
-  "as_at": "2026-10-28T23:30:00Z",
+  "as_at": "2026-10-29T00:32:00Z",
   "portal": "25735731",
   "board": {
     "partner_revenue_ytd": 87000,
