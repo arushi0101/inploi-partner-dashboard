@@ -7,45 +7,52 @@
     "partner_revenue_deal_count": 1,
     "share_of_new_customer_revenue_pct": 31.9,
     "new_business_denominator": 273030,
-    "pipeline_created_fy26": 247400,
-    "pipeline_created_deal_count": 15,
-    "open_pipeline": 97100,
-    "open_deal_count": 9,
+    "pipeline_created_fy26": 369578,
+    "pipeline_created_deal_count": 17,
+    "open_pipeline": 219278,
+    "open_deal_count": 11,
     "producing_partners": 5,
     "signed_partners": 7
   },
   "lifecycle": {
-    "Identification": 24,
-    "Evaluation": 11,
-    "Negotiation": 1,
+    "Identification": 20,
+    "Evaluation": 14,
+    "Negotiation": 3,
     "Contract Signing": 1,
     "Enablement": 4,
-    "Selling": 2,
-    "total_in_lifecycle": 43,
-    "disqualified": 16
+    "Selling": 3,
+    "total_in_lifecycle": 45,
+    "disqualified": 17,
+    "_excluded_test_records": 4,
+    "_excluded_test_record_note": "Arushi Test 1 (Enablement), Test Company Record (Selling), Test Company (Identification), Test Company Record 2 (Identification) carry company_type = Partner and are excluded from every count above per runbook §5. Counting them reads 49 in lifecycle."
   },
   "partners": {
     "Harri": {
       "company_id": "443191661778",
       "stage": "Selling",
+      "days_since_last_deal": 189,
       "deals": 1,
       "open": 0,
       "ytd": 87000,
       "won_12m": 1,
-      "lost_12m": 0
+      "lost_12m": 0,
+      "agreement_in_place": true
     },
     "Beamery": {
       "company_id": "443192380613",
       "stage": "Selling",
-      "deals": 6,
-      "open": 69100,
+      "days_since_last_deal": 3,
+      "deals": 18,
+      "open": 178010,
       "ytd": 0,
-      "won_12m": 0,
-      "lost_12m": 3
+      "won_12m": 1,
+      "lost_12m": 12,
+      "agreement_in_place": true
     },
     "Arctic Shores": {
       "company_id": "443412715759",
       "stage": "Enablement",
+      "days_since_last_deal": 33,
       "deals": 4,
       "open": 28000,
       "ytd": 0,
@@ -55,21 +62,25 @@
     },
     "Tribepad": {
       "company_id": "443128055022",
-      "stage": "Identification",
-      "deals": 2,
-      "open": 0,
+      "stage": "Selling",
+      "days_since_last_deal": 15,
+      "deals": 5,
+      "open": 13268,
       "ytd": 0,
-      "won_12m": 0,
-      "lost_12m": 1
+      "won_12m": 1,
+      "lost_12m": 1,
+      "agreement_in_place": true
     },
     "ModusForce": {
       "company_id": "444381813973",
       "stage": "Contract Signing",
+      "days_since_last_deal": 26,
       "deals": 1,
       "open": 0,
       "ytd": 0,
       "won_12m": 0,
-      "lost_12m": 0
+      "lost_12m": 0,
+      "agreement_in_place": false
     },
     "Eploy": {
       "company_id": "443475284168",
@@ -78,7 +89,8 @@
       "open": 0,
       "ytd": 0,
       "won_12m": 0,
-      "lost_12m": 0
+      "lost_12m": 0,
+      "agreement_in_place": true
     },
     "Pinpoint": {
       "company_id": "428022804693",
@@ -87,7 +99,8 @@
       "open": 0,
       "ytd": 0,
       "won_12m": 0,
-      "lost_12m": 0
+      "lost_12m": 0,
+      "agreement_in_place": true
     },
     "HospitalityJobs": {
       "company_id": "443128057049",
@@ -96,55 +109,33 @@
       "open": 0,
       "ytd": 0,
       "won_12m": 0,
-      "lost_12m": 0
+      "lost_12m": 0,
+      "agreement_in_place": true
     }
   },
+  "_win_rate_note": "Rolling 12 months to 4 Nov 2026. Wins are closed_won_date in window: Bloom Energy 18 Dec 2025 (Beamery), North Yorkshire Council 22 Dec 2025 (Tribepad), Mitchells & Butlers 18 Sep 2026 (Harri). Beamery 1/13 = 7.7%, Tribepad 1/2 = 50%, Harri 1/1 = 100%.",
   "records_to_fix": {
-    "partner_deal_no_partner_company": 13,
+    "partner_deal_no_partner_company": 1,
     "new_logo_missing_source": 5,
-    "partner_win_no_partner_company": 2,
+    "partner_win_no_partner_company": 0,
     "nda_expired_or_missing": 2,
     "sourced_no_agreement": 1,
-    "agreement_stage_below_enablement": 2,
+    "agreement_stage_below_enablement": 1,
     "stage_above_no_agreement": 2,
-    "no_partner_manager": 2,
+    "no_partner_manager": 0,
     "open_deal_no_amount_or_close_date": 4
   },
   "deals_by_year": {
-    "2022": {
-      "count": 1,
-      "value": 108000
-    },
-    "2023": {
-      "count": 5,
-      "value": 80000
-    },
-    "2024": {
-      "count": 16,
-      "value": 421199
-    },
-    "2025": {
-      "count": 21,
-      "value": 422957
-    },
-    "2026": {
-      "count": 15,
-      "value": 247400
-    }
+    "2022": { "count": 1, "value": 108000 },
+    "2023": { "count": 5, "value": 80000 },
+    "2024": { "count": 16, "value": 421199 },
+    "2025": { "count": 21, "value": 422957 },
+    "2026": { "count": 17, "value": 369578 }
   },
   "deals_by_month_2026": {
-    "Jan": 1,
-    "Feb": 0,
-    "Mar": 2,
-    "Apr": 1,
-    "May": 0,
-    "Jun": 0,
-    "Jul": 0,
-    "Aug": 5,
-    "Sep": 4,
-    "Oct": 2,
-    "Nov": 0,
-    "Dec": 0
+    "Jan": 1, "Feb": 0, "Mar": 2, "Apr": 1, "May": 0, "Jun": 0,
+    "Jul": 0, "Aug": 5, "Sep": 4, "Oct": 3, "Nov": 1, "Dec": 0
   },
+  "_not_refreshed": "Narrative prose, flags and the insight panel are left alone per runbook §2 and flagged instead. Stale as at this commit: the Tile 4 note still cites £77,100 and 'seven of eleven'; the Beamery insight still cites 'six of this year's fifteen deals and £69,100'; the records-to-fix note still describes a single TEST deal rather than four Test company records; 'Candidates by type and stage' still reads 36 unsigned against a lifecycle of 45, and its type bars need partner__type, which is not in the runbook §1 query set.",
   "_timestamp_format": "Header stamp shows GMT only. Never IST, never London. It records the last successful HubSpot read, whether or not any figure changed."
 }
