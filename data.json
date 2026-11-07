@@ -1,6 +1,6 @@
 {
   "_comment": "Baseline figures behind index.html. The hourly refresh re-queries HubSpot, diffs against this file, patches index.html where a figure moved, and commits both. Do not hand-edit without updating index.html to match.",
-  "as_at": "2026-11-06T23:30:00Z",
+  "as_at": "2026-11-07T00:31:00Z",
   "portal": "25735731",
   "board": {
     "partner_revenue_ytd": 87000,
@@ -30,7 +30,7 @@
     "Harri": {
       "company_id": "443191661778",
       "stage": "Selling",
-      "days_since_last_deal": 191,
+      "days_since_last_deal": 192,
       "deals": 1,
       "open": 0,
       "ytd": 87000,
@@ -41,7 +41,7 @@
     "Beamery": {
       "company_id": "443192380613",
       "stage": "Selling",
-      "days_since_last_deal": 5,
+      "days_since_last_deal": 6,
       "deals": 18,
       "open": 178010,
       "ytd": 0,
@@ -52,7 +52,7 @@
     "Arctic Shores": {
       "company_id": "443412715759",
       "stage": "Enablement",
-      "days_since_last_deal": 35,
+      "days_since_last_deal": 36,
       "deals": 4,
       "open": 28000,
       "ytd": 0,
@@ -63,7 +63,7 @@
     "Tribepad": {
       "company_id": "443128055022",
       "stage": "Selling",
-      "days_since_last_deal": 17,
+      "days_since_last_deal": 18,
       "deals": 5,
       "open": 13268,
       "ytd": 0,
@@ -74,7 +74,7 @@
     "ModusForce": {
       "company_id": "444381813973",
       "stage": "Contract Signing",
-      "days_since_last_deal": 28,
+      "days_since_last_deal": 29,
       "deals": 1,
       "open": 0,
       "ytd": 0,
@@ -113,7 +113,7 @@
       "agreement_in_place": true
     }
   },
-  "_win_rate_note": "Rolling 12 months to 6 Nov 2026. Wins are closed_won_date in window: Bloom Energy 18 Dec 2025 (Beamery), North Yorkshire Council 22 Dec 2025 (Tribepad), Mitchells & Butlers 18 Sep 2026 (Harri). Beamery 1/13 = 7.7%, Tribepad 1/2 = 50%, Harri 1/1 = 100%.",
+  "_win_rate_note": "Rolling 12 months to 7 Nov 2026. Wins are closed_won_date in window: Bloom Energy 18 Dec 2025 (Beamery), North Yorkshire Council 22 Dec 2025 (Tribepad), Mitchells & Butlers 18 Sep 2026 (Harri). Beamery 1/13 = 7.7%, Tribepad 1/2 = 50%, Harri 1/1 = 100%.",
   "records_to_fix": {
     "partner_deal_no_partner_company": 1,
     "new_logo_missing_source": 5,
