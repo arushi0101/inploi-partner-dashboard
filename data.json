@@ -1,15 +1,15 @@
 {
   "_comment": "Baseline figures behind index.html. The hourly refresh re-queries HubSpot, diffs against this file, patches index.html where a figure moved, and commits both. Do not hand-edit without updating index.html to match.",
-  "as_at": "2026-11-09T07:33:00Z",
+  "as_at": "2026-11-09T08:32:00Z",
   "portal": "25735731",
   "board": {
     "partner_revenue_ytd": 87000,
     "partner_revenue_deal_count": 1,
     "share_of_new_customer_revenue_pct": 31.9,
     "new_business_denominator": 273030,
-    "pipeline_created_fy26": 369578,
+    "pipeline_created_fy26": 366310,
     "pipeline_created_deal_count": 17,
-    "open_pipeline": 219278,
+    "open_pipeline": 216010,
     "open_deal_count": 11,
     "producing_partners": 5,
     "signed_partners": 7
@@ -65,7 +65,7 @@
       "stage": "Selling",
       "days_since_last_deal": 20,
       "deals": 5,
-      "open": 13268,
+      "open": 10000,
       "ytd": 0,
       "won_12m": 1,
       "lost_12m": 1,
@@ -130,12 +130,12 @@
     "2023": { "count": 5, "value": 80000 },
     "2024": { "count": 16, "value": 421199 },
     "2025": { "count": 21, "value": 422957 },
-    "2026": { "count": 17, "value": 369578 }
+    "2026": { "count": 17, "value": 366310 }
   },
   "deals_by_month_2026": {
     "Jan": 1, "Feb": 0, "Mar": 2, "Apr": 1, "May": 0, "Jun": 0,
     "Jul": 0, "Aug": 5, "Sep": 4, "Oct": 3, "Nov": 1, "Dec": 0
   },
-  "_not_refreshed": "Narrative prose, flags and the insight panel are left alone per runbook §2 and flagged instead. Stale as at this commit: the Tile 4 note still cites £77,100 and 'seven of eleven'; the Beamery insight still cites 'six of this year's fifteen deals and £69,100'; the records-to-fix note still describes a single TEST deal rather than four Test company records; 'Candidates by type and stage' still reads 36 unsigned against a lifecycle of 45, and its type bars need partner__type, which is not in the runbook §1 query set.",
+  "_not_refreshed": "Narrative prose, flags and the insight panel are left alone per runbook §2 and flagged instead. Stale as at this commit: the Tile 4 note still cites £77,100 and 'seven of eleven'; the Beamery insight still cites 'six of this year's fifteen deals and £69,100'; the records-to-fix note still describes a single TEST deal rather than four Test company records; 'Candidates by type and stage' still reads 36 unsigned against a lifecycle of 45, and its type bars need partner__type, which is not in the runbook §1 query set. Added by this run: the 'What to do next' table still reads £219,278 for open pipeline (now £216,010) and £13,268 for MHA (now £10,000).",
   "_timestamp_format": "Header stamp shows GMT only. Never IST, never London. It records the last successful HubSpot read, whether or not any figure changed."
 }
